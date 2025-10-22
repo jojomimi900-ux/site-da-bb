@@ -2,20 +2,36 @@
 /* Design System based on specifications */
 
 /* ============================================
+   0. Google Fonts Import
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ============================================
    1. CSS Variables - Design Tokens
    ============================================ */
 :root {
-  /* Primary Colors */
-  --color-sanitexx-blue: #2E86C1;
-  --color-sanitexx-green: #58D68D;
-  --color-sanitexx-graphite: #34495E;
+  /* Primary Colors - New Minimalist Palette */
+  --color-primary-500: #0057FF;
+  --color-accent-500: #00A896;
   
-  /* Neutral Colors */
+  /* Legacy color names for compatibility */
+  --color-sanitexx-blue: #0057FF;
+  --color-sanitexx-green: #00A896;
+  --color-sanitexx-graphite: #1A1A1A;
+  
+  /* Neutral Colors - Updated for Minimalist Design */
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-100: #F5F5F7;
+  --color-neutral-200: #EAEAEA;
+  --color-neutral-700: #555555;
+  --color-neutral-900: #1A1A1A;
+  
+  /* Legacy neutral names for compatibility */
   --color-white: #FFFFFF;
-  --color-grey-100: #F4F6F7;
-  --color-grey-300: #D5DBDB;
-  --color-grey-700: #85929E;
-  --color-grey-900: #212F3D;
+  --color-grey-100: #F5F5F7;
+  --color-grey-300: #EAEAEA;
+  --color-grey-700: #555555;
+  --color-grey-900: #1A1A1A;
   
   /* Feedback Colors */
   --color-feedback-success: #2ECC71;
@@ -23,17 +39,36 @@
   --color-feedback-warning: #F39C12;
   
   /* Typography */
-  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-headings: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Font Sizes - New Scale with Desktop/Mobile variants */
+  --font-size-xxl: 3rem; /* 48px */
+  --font-size-xl: 2.25rem; /* 36px */
+  --font-size-lg: 1.5rem; /* 24px */
+  --font-size-md: 1.25rem; /* 20px */
   --font-size-base: 1rem; /* 16px */
-  --font-size-h6: 1.25rem; /* 20px */
-  --font-size-h5: 1.563rem; /* 25px */
-  --font-size-h4: 1.953rem; /* 31px */
-  --font-size-h3: 2.441rem; /* 39px */
-  --font-size-h2: 3.052rem; /* 49px */
-  --font-size-h1: 3.815rem; /* 61px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-xs: 0.75rem; /* 12px */
+  
+  /* Mobile font sizes */
+  --font-size-xxl-mobile: 2.25rem; /* 36px */
+  --font-size-xl-mobile: 1.75rem; /* 28px */
+  --font-size-lg-mobile: 1.25rem; /* 20px */
+  --font-size-md-mobile: 1.125rem; /* 18px */
+  
+  /* Legacy font sizes for h1-h6 compatibility */
+  --font-size-h1: 3rem; /* 48px */
+  --font-size-h2: 2.25rem; /* 36px */
+  --font-size-h3: 1.5rem; /* 24px */
+  --font-size-h4: 1.25rem; /* 20px */
+  --font-size-h5: 1.125rem; /* 18px */
+  --font-size-h6: 1rem; /* 16px */
   --font-size-small: 0.875rem; /* 14px */
   
   /* Font Weights */
+  --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -42,16 +77,20 @@
   /* Line Heights */
   --line-height-body: 1.6;
   --line-height-heading: 1.2;
+  --line-height-h1: 1.2;
+  --line-height-h2: 1.3;
+  --line-height-h3: 1.4;
+  --line-height-h4: 1.5;
   
-  /* Spacing Scale (8px base) */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 12px;
-  --spacing-base: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
-  --spacing-3xl: 64px;
+  /* Spacing Scale (8px base) - Updated to exact multiples */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-base: 32px;
+  --spacing-lg: 40px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 80px;
   --spacing-4xl: 96px;
   
   /* Border Radius */
@@ -100,12 +139,12 @@ html {
 }
 
 body {
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-body);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
-  color: var(--color-grey-900);
-  background-color: var(--color-white);
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-0);
   overflow-x: hidden;
 }
 
@@ -113,70 +152,75 @@ body {
    3. Typography
    ============================================ */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-headings);
   line-height: var(--line-height-heading);
-  color: var(--color-sanitexx-graphite);
-  margin-bottom: var(--spacing-base);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--spacing-sm);
 }
 
 h1 {
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-h1);
   
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: var(--font-size-xxl-mobile);
   }
 }
 
 h2 {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-h2);
   
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: var(--font-size-xl-mobile);
   }
 }
 
 h3 {
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-h3);
   
   @media (max-width: 768px) {
-    font-size: 1.75rem;
+    font-size: var(--font-size-lg-mobile);
   }
 }
 
 h4 {
-  font-size: var(--font-size-h4);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-grey-900);
+  line-height: var(--line-height-h4);
   
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: var(--font-size-md-mobile);
   }
 }
 
 h5 {
-  font-size: var(--font-size-h5);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
   
   @media (max-width: 768px) {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
 
 h6 {
-  font-size: var(--font-size-h6);
-  
-  @media (max-width: 768px) {
-    font-size: 1.125rem;
-  }
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
 }
 
 p {
-  margin-bottom: var(--spacing-base);
+  font-family: var(--font-family-body);
+  margin-bottom: var(--spacing-sm);
   max-width: 75ch;
+  line-height: var(--line-height-body);
 }
 
 a {
-  color: var(--color-sanitexx-blue);
+  color: var(--color-primary-500);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   transition: all var(--transition-fast);
@@ -186,7 +230,7 @@ a {
   }
   
   &:focus-visible {
-    outline: 2px solid var(--color-sanitexx-blue);
+    outline: 2px solid var(--color-primary-500);
     outline-offset: 2px;
     border-radius: var(--border-radius-sm);
   }
