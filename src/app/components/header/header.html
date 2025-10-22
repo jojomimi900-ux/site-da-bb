@@ -11,11 +11,19 @@
       <!-- Navigation Links -->
       <ul class="header-menu" role="menubar">
         <li role="none">
+          <a href="#produtos" 
+             role="menuitem"
+             [class.active]="activeSection === 'produtos'"
+             (click)="navigateToSection('produtos', $event)">
+            Soluções
+          </a>
+        </li>
+        <li role="none">
           <a href="#principios" 
              role="menuitem"
              [class.active]="activeSection === 'principios'"
              (click)="navigateToSection('principios', $event)">
-            Princípios
+            Tecnologia
           </a>
         </li>
         <li role="none">
@@ -23,23 +31,7 @@
              role="menuitem"
              [class.active]="activeSection === 'historia'"
              (click)="navigateToSection('historia', $event)">
-            Nossa História
-          </a>
-        </li>
-        <li role="none">
-          <a href="#produtos" 
-             role="menuitem"
-             [class.active]="activeSection === 'produtos'"
-             (click)="navigateToSection('produtos', $event)">
-            Produtos
-          </a>
-        </li>
-        <li role="none">
-          <a href="#certificacoes" 
-             role="menuitem"
-             [class.active]="activeSection === 'certificacoes'"
-             (click)="navigateToSection('certificacoes', $event)">
-            Certificações
+            Sobre Nós
           </a>
         </li>
         <li role="none">
@@ -47,18 +39,15 @@
              role="menuitem"
              [class.active]="activeSection === 'contato'"
              (click)="navigateToSection('contato', $event)">
-            Fale Conosco
+            Contacto
           </a>
         </li>
       </ul>
       
       <!-- CTA Buttons -->
       <div class="header-actions">
-        <button class="btn btn-secondary" type="button">
-          Catálogo/Laudos
-        </button>
         <button class="btn btn-primary" type="button" (click)="navigateToSection('contato', $event)">
-          Solicitar Orçamento
+          Fale Conosco
         </button>
       </div>
       

@@ -4,15 +4,67 @@
   left: 0;
   right: 0;
   height: 80px;
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-grey-300);
+  background-color: transparent;
+  border-bottom: none;
   z-index: 1000;
-  transition: all var(--transition-base);
+  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
+  // Transparent state over hero - light text
+  .header-logo .logo-text {
+    color: var(--color-neutral-0);
+    transition: color var(--transition-base);
+  }
+
+  .header-menu a {
+    color: var(--color-neutral-0);
+    transition: color var(--transition-base);
+
+    &:hover,
+    &.active {
+      color: var(--color-neutral-0);
+      
+      &::after {
+        background-color: var(--color-neutral-0);
+      }
+    }
+  }
+
+  .header-menu-toggle .menu-icon,
+  .header-menu-toggle .menu-icon::before,
+  .header-menu-toggle .menu-icon::after {
+    background-color: var(--color-neutral-0);
+    transition: background-color var(--transition-base);
+  }
+
+  // Scrolled state - glassmorphism effect
   &.scrolled {
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--color-neutral-200);
+
+    .header-logo .logo-text {
+      color: var(--color-neutral-900);
+    }
+
+    .header-menu a {
+      color: var(--color-neutral-900);
+
+      &:hover,
+      &.active {
+        color: var(--color-primary-500);
+        
+        &::after {
+          background-color: var(--color-primary-500);
+        }
+      }
+    }
+
+    .header-menu-toggle .menu-icon,
+    .header-menu-toggle .menu-icon::before,
+    .header-menu-toggle .menu-icon::after {
+      background-color: var(--color-neutral-900);
+    }
   }
 
   .container {
@@ -44,15 +96,16 @@
   .logo-text {
     font-size: 1.5rem;
     font-weight: var(--font-weight-bold);
-    color: var(--color-sanitexx-graphite);
+    font-family: var(--font-family-headings);
     letter-spacing: -0.02em;
+    transition: color var(--transition-base);
   }
 }
 
 .header-menu {
   display: flex;
   list-style: none;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-base);
   margin: 0;
   padding: 0;
 
@@ -67,8 +120,8 @@
   a {
     position: relative;
     display: block;
-    padding: var(--spacing-sm) 0;
-    color: var(--color-grey-900);
+    padding: var(--spacing-xs) 0;
+    font-family: var(--font-family-body);
     font-weight: var(--font-weight-medium);
     font-size: 0.9375rem;
     text-decoration: none;
@@ -81,14 +134,12 @@
       left: 0;
       right: 0;
       height: 2px;
-      background-color: var(--color-sanitexx-blue);
       transform: scaleX(0);
       transition: transform var(--transition-fast);
     }
 
     &:hover,
     &.active {
-      color: var(--color-sanitexx-blue);
       text-decoration: none;
 
       &::after {
@@ -97,7 +148,7 @@
     }
 
     &:focus-visible {
-      outline: 2px solid var(--color-sanitexx-blue);
+      outline: 2px solid var(--color-primary-500);
       outline-offset: 4px;
       border-radius: var(--border-radius-sm);
     }
@@ -120,7 +171,7 @@
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-body);
   font-size: 0.9375rem;
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
@@ -132,7 +183,7 @@
   white-space: nowrap;
 
   &:focus-visible {
-    outline: 2px solid var(--color-sanitexx-blue);
+    outline: 2px solid var(--color-primary-500);
     outline-offset: 2px;
   }
 
@@ -142,21 +193,21 @@
 }
 
 .btn-primary {
-  background-color: var(--color-sanitexx-blue);
-  color: var(--color-white);
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-0);
 
   &:hover {
-    background-color: #2874a6;
+    background-color: #0046CC;
   }
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-sanitexx-blue);
-  border: 2px solid var(--color-sanitexx-blue);
+  color: var(--color-primary-500);
+  border: 2px solid var(--color-primary-500);
 
   &:hover {
-    background-color: var(--color-grey-100);
+    background-color: var(--color-neutral-100);
   }
 }
 
