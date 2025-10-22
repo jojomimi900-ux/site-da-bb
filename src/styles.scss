@@ -284,7 +284,7 @@ a {
    ============================================ */
 /* Focus states */
 *:focus-visible {
-  outline: 2px solid var(--color-sanitexx-blue);
+  outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
 }
 
@@ -293,9 +293,9 @@ a {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-sanitexx-blue);
-  color: var(--color-white);
-  padding: var(--spacing-sm) var(--spacing-base);
+  background: var(--color-primary-500);
+  color: var(--color-neutral-0);
+  padding: var(--spacing-xs) var(--spacing-sm);
   z-index: 100;
   
   &:focus {
