@@ -1,59 +1,173 @@
-# SanitexxWebsite
+# Sanitexx Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+Website institucional da Sanitexx - Saneantes de Alta Performance com Compromisso Ambiental.
 
-## Development server
+Este projeto foi desenvolvido utilizando [Angular CLI](https://github.com/angular/angular-cli) versão 20.3.6.
 
-To start a local development server, run:
+## 🚀 Tecnologias
+
+- **Angular 20.3** - Framework principal
+- **TypeScript 5.9** - Linguagem de programação
+- **SCSS** - Pré-processador CSS
+- **Google Fonts (Inter)** - Tipografia
+
+## 📋 Pré-requisitos
+
+- Node.js 20.x ou superior
+- npm 10.x ou superior
+
+## 🔧 Instalação
 
 ```bash
+# Clone o repositório
+git clone https://github.com/jojomimi900-ux/site-da-bb.git
+
+# Entre no diretório
+cd site-da-bb
+
+# Instale as dependências
+npm install
+```
+
+## 🏃 Executando o projeto
+
+### Servidor de desenvolvimento
+
+Para iniciar o servidor local de desenvolvimento, execute:
+
+```bash
+npm start
+# ou
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A aplicação estará disponível em `http://localhost:4200`. A aplicação recarregará automaticamente sempre que você modificar os arquivos fonte.
 
-## Code scaffolding
+### Build de produção
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para compilar o projeto para produção, execute:
 
 ```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+npm run build
+# ou
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os arquivos compilados estarão na pasta `dist/sanitexx-website`. Por padrão, o build de produção otimiza sua aplicação para performance e velocidade.
 
-## Running unit tests
+## 📐 Estrutura do Projeto
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+```
+src/
+├── app/
+│   ├── components/         # Componentes da aplicação
+│   │   ├── header/        # Cabeçalho fixo com navegação
+│   │   ├── hero/          # Seção hero principal
+│   │   ├── principles/    # Seção de princípios
+│   │   ├── history/       # Seção nossa história
+│   │   ├── products/      # Seção de produtos
+│   │   ├── contact/       # Formulário de contato
+│   │   └── footer/        # Rodapé com certificações
+│   ├── shared/            # Componentes reutilizáveis
+│   ├── directives/        # Diretivas customizadas
+│   ├── app.ts            # Componente raiz
+│   └── app.html          # Template principal
+├── styles.scss            # Estilos globais e design system
+└── index.html            # HTML principal com SEO
+```
+
+## 🎨 Design System
+
+O projeto implementa um design system completo baseado nas especificações fornecidas:
+
+### Cores Principais
+- **Sanitexx Blue** (#2E86C1) - Confiança e segurança
+- **Sanitexx Green** (#58D68D) - Sustentabilidade
+- **Sanitexx Graphite** (#34495E) - Texto principal
+
+### Tipografia
+- **Fonte:** Inter (Google Fonts)
+- **Pesos:** 400 (Regular), 500 (Medium), 600 (SemiBold), 700 (Bold)
+- **Escala Modular:** Base 16px com fator 1.250 (Major Third)
+
+### Espaçamento
+Sistema baseado em múltiplos de 8px: 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px, 96px
+
+## ♿ Acessibilidade
+
+O site foi desenvolvido seguindo as diretrizes **WCAG 2.1 AA**:
+
+- ✓ Contraste mínimo de 4.5:1 para texto normal
+- ✓ Navegação completa por teclado
+- ✓ Estados de foco visíveis personalizados
+- ✓ Estrutura semântica HTML5 com landmarks
+- ✓ Suporte a `prefers-reduced-motion`
+- ✓ Textos alternativos em imagens
+- ✓ Skip links para conteúdo principal
+- ✓ ARIA labels e roles apropriados
+
+## 📱 Responsividade
+
+Breakpoints definidos:
+- **Mobile:** ≤767px
+- **Tablet:** 768px - 1023px
+- **Desktop:** 1024px - 1439px
+- **Desktop Large:** ≥1440px
+
+O layout utiliza CSS Grid e Flexbox para criar uma experiência responsiva e fluida em todos os dispositivos.
+
+## 🔍 SEO
+
+Implementações para otimização de motores de busca:
+
+- Meta tags otimizadas (title, description)
+- Open Graph tags para redes sociais
+- Twitter Card meta tags
+- Schema.org structured data:
+  - Organization
+  - FAQPage
+- Idioma pt-BR definido
+- URLs semânticas com âncoras
+
+## 🧪 Testes
+
+Para executar os testes unitários com [Karma](https://karma-runner.github.io):
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 📝 Scaffolding de Código
 
-For end-to-end (e2e) testing, run:
+Para gerar um novo componente:
 
 ```bash
-ng e2e
+ng generate component nome-do-componente
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Para lista completa de schematics disponíveis:
 
-## Additional Resources
+```bash
+ng generate --help
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🌟 Funcionalidades Implementadas
+
+- ✅ Header fixo com navegação suave
+- ✅ Seção Hero com CTAs e badges de certificação
+- ✅ Seção Princípios (Segurança, Sustentabilidade, Eficácia)
+- ✅ Seção Nossa História
+- ✅ Seção Linhas de Produto (4 linhas)
+- ✅ Formulário de Contato com validação
+- ✅ Seção Certificações (ANVISA, ISO 9001, ISO 14001)
+- ✅ Footer completo com links institucionais
+- ✅ Design responsivo mobile-first
+- ✅ Animações sutis respeitando preferências do usuário
+
+## 📄 Licença
+
+© 2025 Sanitexx. Todos os direitos reservados.
+
+## 📚 Recursos Adicionais
+
+Para mais informações sobre Angular CLI, visite a [página de Referência de Comandos do Angular CLI](https://angular.dev/tools/cli).

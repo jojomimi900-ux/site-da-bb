@@ -3,6 +3,7 @@ import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { Hero } from './components/hero/hero';
 import { Principles } from './components/principles/principles';
+import { History } from './components/history/history';
 import { Products } from './components/products/products';
 import { Contact } from './components/contact/contact';
 
@@ -13,6 +14,7 @@ import { Contact } from './components/contact/contact';
     Footer,
     Hero,
     Principles,
+    History,
     Products,
     Contact
   ],
