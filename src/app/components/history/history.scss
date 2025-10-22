@@ -1,35 +1,37 @@
 .history {
-  background-color: var(--color-grey-100);
+  background-color: var(--color-neutral-0);
 }
 
 .history-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
+  gap: var(--spacing-2xl);
   align-items: center;
 
   @media (max-width: 1023px) {
     grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-xl);
   }
 }
 
 .history-text {
   h2 {
-    font-size: var(--font-size-h2);
-    color: var(--color-sanitexx-graphite);
-    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-family-headings);
+    color: var(--color-neutral-900);
+    margin-bottom: var(--spacing-md);
 
     @media (max-width: 768px) {
-      font-size: var(--font-size-h3);
+      font-size: var(--font-size-xl-mobile);
     }
   }
 
   p {
     font-size: 1rem;
-    color: var(--color-grey-700);
+    font-family: var(--font-family-body);
+    color: var(--color-neutral-700);
     line-height: var(--line-height-body);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
     max-width: 100%;
 
     &:last-child {
@@ -50,7 +52,7 @@
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  background-color: var(--color-white);
+  background-color: var(--color-neutral-100);
 
   svg {
     width: 100%;

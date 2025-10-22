@@ -1,11 +1,11 @@
 .products {
-  background-color: var(--color-grey-100);
+  background-color: var(--color-neutral-100);
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -13,8 +13,8 @@
 }
 
 .product-card {
-  background-color: var(--color-white);
-  padding: var(--spacing-lg);
+  background-color: var(--color-neutral-0);
+  padding: var(--spacing-md);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
@@ -25,17 +25,19 @@
   }
 
   h4 {
-    font-size: var(--font-size-h5);
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-grey-900);
-    margin-bottom: var(--spacing-md);
+    font-family: var(--font-family-headings);
+    color: var(--color-neutral-900);
+    margin-bottom: var(--spacing-xs);
   }
 
   p {
     font-size: 0.9375rem;
-    color: var(--color-grey-700);
+    font-family: var(--font-family-body);
+    color: var(--color-neutral-700);
     line-height: var(--line-height-body);
-    margin-bottom: var(--spacing-base);
+    margin-bottom: var(--spacing-sm);
   }
 }
 
@@ -45,18 +47,19 @@
   justify-content: center;
   width: 64px;
   height: 64px;
-  margin-bottom: var(--spacing-base);
+  margin-bottom: var(--spacing-sm);
   border-radius: var(--border-radius-md);
-  background-color: rgba(46, 134, 193, 0.1);
-  color: var(--color-sanitexx-blue);
+  background-color: rgba(0, 87, 255, 0.1);
+  color: var(--color-primary-500);
 }
 
 .product-badge {
   display: inline-block;
   padding: 4px 12px;
-  background-color: var(--color-sanitexx-green);
-  color: var(--color-white);
-  font-size: 0.75rem;
+  background-color: var(--color-accent-500);
+  color: var(--color-neutral-0);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-body);
   font-weight: var(--font-weight-semibold);
   border-radius: var(--border-radius-sm);
   text-transform: uppercase;
