@@ -1,0 +1,110 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  padding-top: 80px; /* Header height offset */
+  padding-bottom: var(--spacing-4xl);
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: var(--spacing-3xl);
+  }
+}
+
+.hero-content {
+  max-width: 800px;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.hero-title {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-sanitexx-graphite);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.1;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-grey-700);
+  margin-bottom: var(--spacing-2xl);
+  line-height: var(--line-height-body);
+  max-width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-base);
+  margin-bottom: var(--spacing-2xl);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1rem;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.hero-badges {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-base);
+  background-color: var(--color-grey-100);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-small);
+  color: var(--color-grey-700);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-sanitexx-green);
+  color: var(--color-white);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+}
