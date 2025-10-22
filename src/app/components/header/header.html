@@ -1,0 +1,75 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="container">
+    <nav class="header-nav">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="#" aria-label="Sanitexx - Página Inicial">
+          <span class="logo-text">Sanitexx</span>
+        </a>
+      </div>
+      
+      <!-- Navigation Links -->
+      <ul class="header-menu" role="menubar">
+        <li role="none">
+          <a href="#principios" 
+             role="menuitem"
+             [class.active]="activeSection === 'principios'"
+             (click)="navigateToSection('principios', $event)">
+            Princípios
+          </a>
+        </li>
+        <li role="none">
+          <a href="#historia" 
+             role="menuitem"
+             [class.active]="activeSection === 'historia'"
+             (click)="navigateToSection('historia', $event)">
+            Nossa História
+          </a>
+        </li>
+        <li role="none">
+          <a href="#produtos" 
+             role="menuitem"
+             [class.active]="activeSection === 'produtos'"
+             (click)="navigateToSection('produtos', $event)">
+            Produtos
+          </a>
+        </li>
+        <li role="none">
+          <a href="#certificacoes" 
+             role="menuitem"
+             [class.active]="activeSection === 'certificacoes'"
+             (click)="navigateToSection('certificacoes', $event)">
+            Certificações
+          </a>
+        </li>
+        <li role="none">
+          <a href="#contato" 
+             role="menuitem"
+             [class.active]="activeSection === 'contato'"
+             (click)="navigateToSection('contato', $event)">
+            Fale Conosco
+          </a>
+        </li>
+      </ul>
+      
+      <!-- CTA Buttons -->
+      <div class="header-actions">
+        <button class="btn btn-secondary" type="button">
+          Catálogo/Laudos
+        </button>
+        <button class="btn btn-primary" type="button" (click)="navigateToSection('contato', $event)">
+          Solicitar Orçamento
+        </button>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="header-menu-toggle" 
+              type="button"
+              aria-label="Abrir menu de navegação"
+              [attr.aria-expanded]="mobileMenuOpen"
+              (click)="toggleMobileMenu()">
+        <span class="menu-icon"></span>
+      </button>
+    </nav>
+  </div>
+</header>
