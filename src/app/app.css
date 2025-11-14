@@ -113,17 +113,11 @@
   overflow: hidden;
 }
 
-.hero-image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><rect fill="%23008CCF" opacity="0.3" width="800" height="600"/></svg>');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.6;
-  mix-blend-mode: multiply;
+.hero-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Product Cards */
@@ -139,40 +133,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
   transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .product-image.hospitalar {
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
 }
 
-.product-image.hospitalar::before {
-  content: '🏥';
-}
-
 .product-image.food-service {
   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-}
-
-.product-image.food-service::before {
-  content: '🍴';
 }
 
 .product-image.industrial {
   background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
 }
 
-.product-image.industrial::before {
-  content: '🏭';
-}
-
 .product-image.institucional {
   background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-}
-
-.product-image.institucional::before {
-  content: '🏢';
 }
 
 .product-card:hover .product-image {
@@ -188,14 +173,11 @@
   overflow: hidden;
 }
 
-.about-image::before {
-  content: '🔬';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 120px;
-  opacity: 0.3;
+.section-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Mission Section */
@@ -222,16 +204,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.mission-image::after,
-.vision-image::after,
-.values-image::after {
-  content: 'Espaço para imagem';
-  opacity: 0.5;
 }
 
 /* Vision Section */
@@ -257,7 +229,6 @@
 
 /* Inspirational Banner */
 .inspirational-banner {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%235DB075" width="1200" height="400"/></svg>');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -307,12 +278,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px;
+  overflow: hidden;
 }
 
-.team-photo::before {
-  content: '👤';
-  color: white;
+.team-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .team-card h3 {
